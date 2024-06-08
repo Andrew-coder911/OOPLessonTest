@@ -27,15 +27,21 @@ public class HomeRunner {
         Floor floor1 = new Floor(4, flats);
         Floor[] floors = new Floor[]{floor, floor1};
 
-        Home home = new Home(10, rooms, flats, floors);
+        Home home = new Home(10,floors);
         printAllInformation(home);
     }
-
+    //исправить вывод
     public static void printAllInformation(Home home) {
         home.print();
         for (int i = 0; i < home.getFloors().length; i++) {
-            Floor floor = home.getFloors()[i];
-            System.out.println(Arrays.toString(home.getFloors()));
+            home.getFloors()[i].print();
+            for (int j = 0; j < home.getFloors()[i].getFlats().length; j++) {
+                home.getFloors()[i].getFlats()[i].print();
+                for (int k = 0; k < home.getFloors()[i].getFlats()[i].getRooms().length; k++) {
+                    home.getFloors()[i].getFlats()[i].getRooms()[i].print();
+                }
+                break;
+            }
         }
     }
 

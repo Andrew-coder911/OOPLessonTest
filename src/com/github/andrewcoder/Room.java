@@ -7,10 +7,6 @@ public class Room {
         this.enter = enter;
     }
 
-    public boolean checkpoint() {
-        return enter;
-    }
-
     public void print(){
         System.out.println("Room checkpointed? - " + enter);
     }
