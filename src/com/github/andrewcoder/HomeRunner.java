@@ -1,48 +1,40 @@
 package com.github.andrewcoder;
 
-import java.util.Arrays;
-
-//Представить в виде классов и их композиции следующую модель.
-//- Каждый дом содержит свой номер (int), и множество этажей (массив).
-//- Каждый этаж содержит номер этажа (int), и множество квартир (массив).
-//- Каждая квартира содержит свой номер (int), и множество комнат (массив).
-//- Каждая комната содержит поле проходная она или нет (boolean).
-//В каждом классе реализовать метод print, который на консоль выводит информацию об объекте (должны присутствовать все поля объекта!).
-//Например, метод print класса этаж должен выводить на консоль:
-//“Этаж 2, количество квартир 18”
-//Создание всех объектов вынести в отдельный класс с методом main.
-//Там же реализовать метод printAllInformation, который на вход принимает объект типа дом,
-// и выводит информацию о нем, его этажах, квартирах и комнатах, вызывая методы print.
 public class HomeRunner {
     public static void main(String[] args) {
-        Room room1 = new Room(true);
+        Room room1 = new Room(false);
         Room room2 = new Room(false);
+        Room room3 = new Room(true);
+        Room room4 = new Room(true);
         Room[] rooms = {room1, room2};
+        Room[] rooms2 = {room3, room4};
 
-        Flat flat = new Flat(194,rooms);
-        Flat flat1 = new Flat(129, rooms);
-        Flat[] flats = new Flat[]{flat, flat1};
+        Flat flat1 = new Flat(11, rooms);
+        Flat flat2 = new Flat(12, rooms2);
+        Flat flat3 = new Flat(13, rooms);
+        Flat flat4 = new Flat(14, rooms2);
+        Flat[] flats1 = new Flat[]{flat1, flat2};
+        Flat[] flats2 = new Flat[]{flat3, flat4};
 
-        Floor floor = new Floor(3, flats);
-        Floor floor1 = new Floor(4, flats);
-        Floor[] floors = new Floor[]{floor, floor1};
+        Floor floor1 = new Floor(1, flats1);
+        Floor floor2 = new Floor(2, flats2);
+        Floor floor3 = new Floor(3, flats1);
+        Floor floor4 = new Floor(4, flats2);
+        Floor[] floors = new Floor[]{floor1, floor2, floor3, floor4};
 
         Home home = new Home(10,floors);
         printAllInformation(home);
     }
-    //исправить вывод
     public static void printAllInformation(Home home) {
         home.print();
         for (int i = 0; i < home.getFloors().length; i++) {
             home.getFloors()[i].print();
             for (int j = 0; j < home.getFloors()[i].getFlats().length; j++) {
-                home.getFloors()[i].getFlats()[i].print();
-                for (int k = 0; k < home.getFloors()[i].getFlats()[i].getRooms().length; k++) {
-                    home.getFloors()[i].getFlats()[i].getRooms()[i].print();
+                home.getFloors()[i].getFlats()[j].print();
+                for (int k = 0; k < home.getFloors()[i].getFlats()[j].getRooms().length; k++) {
+                    home.getFloors()[i].getFlats()[j].getRooms()[k].print();
                 }
-                break;
             }
         }
     }
-
 }

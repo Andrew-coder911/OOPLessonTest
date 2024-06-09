@@ -14,6 +14,6 @@ public class Flat {
     }
 
     public void print() {
-        System.out.println("Квартира №" + flatNumber + " Кол-во комнат: " + rooms.length);
+        System.out.println("  Квартира №" + flatNumber + " Кол-во комнат: " + rooms.length);
     }
 }

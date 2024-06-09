@@ -8,6 +8,6 @@ public class Room {
     }
 
     public void print(){
-        System.out.println("Room checkpointed? - " + enter);
+        System.out.println("    Room checkpointed? - " + enter);
     }
 }
