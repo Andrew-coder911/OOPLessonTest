@@ -8,19 +8,19 @@ public class HomeRunner {
         printAllInformation(home);
     }
     public static void printAllInformation(Home home) {
-        home.print();
+        System.out.println(home.toString());;
         for (int i = 0; i < home.getFloors().length; i++) {
-            home.getFloors()[i].print();
+            System.out.println(home.getFloors()[i].toString());
             for (int j = 0; j < home.getFloors()[i].getFlats().length; j++) {
-                home.getFloors()[i].getFlats()[j].print();
+                System.out.println(home.getFloors()[i].getFlats()[j].toString());;
                 for (int k = 0; k < home.getFloors()[i].getFlats()[j].getRooms().length; k++) {
-                    home.getFloors()[i].getFlats()[j].getRooms()[k].print();
+                    System.out.println(home.getFloors()[i].getFlats()[j].getRooms()[k].toString());
                 }
             }
         }
     }
     public static Room[] makeRooms() {
-        int countRoom = new Random().nextInt(1, 7);
+        int countRoom = new Random().nextInt(1, 4);
         Room[] rooms = new Room[countRoom];
         for (int i = 0; i < rooms.length; i++) {
             boolean random = new Random().nextBoolean();
@@ -28,7 +28,8 @@ public class HomeRunner {
         }
         return rooms;
     }
-    public static Flat[] makeFlats(int countFlats) {
+    public static Flat[] makeFlats() {
+        int countFlats = new Random().nextInt(1,4);
         Flat[] flats = new Flat[countFlats];
         for (int i = 0; i < flats.length; i++) {
             Room[] rooms = makeRooms();
@@ -38,8 +39,8 @@ public class HomeRunner {
     }
     public static Floor[] makeFloors(int floorCount) {
         Floor[] floors = new Floor[floorCount];
-        Flat[] flats = makeFlats(3);
         for (int i = 0; i < floors.length; i++) {
+            Flat[] flats = makeFlats();
             floors[i] = new Floor(i + 1, flats);
         }
         return floors;

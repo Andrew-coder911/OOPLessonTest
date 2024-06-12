@@ -12,8 +12,8 @@ public class Flat {
     public Room[] getRooms() {
         return rooms;
     }
-
-    public void print() {
-        System.out.println("  Квартира №" + flatNumber + " Кол-во комнат: " + rooms.length);
+    @Override
+    public String toString() {
+        return "  Квартира №" + flatNumber + " Кол-во комнат: " + rooms.length;
     }
 }

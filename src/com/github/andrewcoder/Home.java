@@ -12,8 +12,8 @@ public class Home {
     public Floor[] getFloors() {
         return floors;
     }
-
-    public void print() {
-        System.out.println("Дом №" + homeNumber + " Этажей: " + floors.length);
+    @Override
+    public String toString() {
+        return "Дом №" + homeNumber + " Этажей: " + floors.length;
     }
 }

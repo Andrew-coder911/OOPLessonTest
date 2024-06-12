@@ -7,7 +7,9 @@ public class Room {
         this.enter = enter;
     }
 
-    public void print(){
-        System.out.println("    Room checkpointed? - " + enter);
+    @Override
+    public String toString(){
+        String print = "    Room checkpointed? - ";
+        return  print + enter;
     }
 }

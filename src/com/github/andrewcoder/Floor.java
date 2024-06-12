@@ -14,8 +14,8 @@ public class Floor {
     public Flat[] getFlats() {
         return flats;
     }
-
-    public void print() {
-        System.out.println("Этаж №" + floorNumber + " Кол-во квартир: " + flats.length);
+    @Override
+    public String toString() {
+        return "Этаж №" + floorNumber + " Кол-во квартир: " + flats.length;
     }
 }
